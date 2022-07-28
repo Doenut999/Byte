@@ -5,7 +5,7 @@ const App = ()  =>{
   return (
     <>
         <GlobalStyle />
-      <HomePage />
+        <HomePage />
     </>
   );
 }

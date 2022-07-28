@@ -1,5 +1,6 @@
 import styled from "styled-components";
 const HomePage = () => {
+
     return (
     <>
         <Sextion style={{backgroundColor: "#25283D"}} className="first">First Section</Sextion>
