@@ -31,6 +31,7 @@ const HomePage = () => {
         </Section>
     </>
     )
+
 }
 
 const Section = styled.section`
@@ -51,7 +52,6 @@ const SubSection = styled.section`
   }
 `
 
-
 const Input = styled.input`
     max-width: 400px;
     min-width: 300px;
@@ -61,6 +61,7 @@ const Input = styled.input`
     display: inline-block;
     border: 0 transparent;
 `
+
 const Mix = styled.div`
   border-bottom: 1px solid purple;
   &:hover {
@@ -73,7 +74,7 @@ const SubSectionA1 = styled(SubSection)`
   @media (max-width: 700px) {
     flex: 1;
     width: 100%;
-  }
+  } 
 `
 const SubSectionA2 = styled(SubSection)`
   display: flex;
@@ -87,6 +88,7 @@ const SubSectionA2 = styled(SubSection)`
 const SubSectionB1 = styled(SubSection)`
   background-color: lawngreen;
 `
+
 const SubSectionB2 = styled(SubSection)`
     
 `
