@@ -16,6 +16,7 @@ const BodyStyles = styled.div`
   width: 80vw;
   height: 100vh;
   float: right;
+  background-color: #1b1b1b;
   border: 1px solid red;
   
 `

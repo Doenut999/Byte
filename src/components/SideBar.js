@@ -11,23 +11,23 @@ const Sidebar = () => {
             <Side>
                 <Div className="order-history">
                     <SideBarImg src={OrderHistory} alt="yay" title="order-history"/>
-                    <span>Order History</span>
+                    <SideText>Order History</SideText>
                 </Div>
                 <Div className="promotions-n-deals">
                     <SideBarImg src={Promo} alt="yay"  title="deals and promo"/>
-                    <span>Deals & Promos</span>
+                    <SideText>Deals & Promos</SideText>
                 </Div>
                 <Div className="special-order">
                     <SideBarImg src={SpecialOrder} alt="yay"  title="special-order"/>
-                    <span>Special Order</span>
+                    <SideText>Special Order</SideText>
                 </Div>
                 <Div className="favorites">
                     <SideBarImg src={Favs} alt="baba" title="favorites"/>
-                    <span>Favorites</span>
+                    <SideText>Favorites</SideText>
                 </Div>
                 <Div className="log-out">
                     <SideBarImg src={LogOut} alt="bobo" title="log-out"/>
-                    <span>Log Out</span>
+                    <SideText>Log Out</SideText>
                 </Div>
             </Side>
         </>
@@ -63,6 +63,10 @@ const SideBarImg = styled.img`
   width: 20px;
   height: 20px;
   margin-left: 30px;
+`
+
+const SideText = styled.span`
+  color: white;
 `
 
 export default Sidebar
