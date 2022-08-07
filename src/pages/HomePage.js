@@ -17,15 +17,15 @@ const HomePage = () => {
                 <Link to="menu" element={<Menu />}>Create Account</Link>
             </SubSectionA2>
         </Section>
-        <Section style={{backgroundColor: "#4B3F72"}} className="first">
+        <Section  className="first">
             <SubSectionB1>First Section</SubSectionB1>
             <SubSectionB2>First Section II</SubSectionB2>
         </Section>
-        <Section style={{backgroundColor: "#fff"}} className="first">
+        <Section  className="first">
             <SubSectionC1>First Section</SubSectionC1>
             <SubSectionC2>First Section II</SubSectionC2>
         </Section>
-        <Section style={{backgroundColor: "#4B3F72"}} className="first">
+        <Section className="first">
             <SubSectionD1>First Section</SubSectionD1>
             <SubSectionD2>First Section II</SubSectionD2>
         </Section>
@@ -70,7 +70,6 @@ const Mix = styled.div`
 `
 
 const SubSectionA1 = styled(SubSection)`
-  background-color: #0065fc;
   @media (max-width: 700px) {
     flex: 1;
     width: 100%;
@@ -79,29 +78,24 @@ const SubSectionA1 = styled(SubSection)`
 const SubSectionA2 = styled(SubSection)`
   display: flex;
   flex-direction: column;
-  background-color: red;
   @media (max-width: 700px) {
     flex: 1;
     width: 100%;
   }
 `
 const SubSectionB1 = styled(SubSection)`
-  background-color: lawngreen;
 `
 
 const SubSectionB2 = styled(SubSection)`
     
 `
 const SubSectionC1 = styled(SubSection)`
-  background-color: #fc0000;
 `
 
 const SubSectionC2 = styled(SubSection)`
-  background-color: #b500fc;
-`
+ `
 
 const SubSectionD1 = styled(SubSection)`
-  background-color: lawngreen;
 `
 const SubSectionD2 = styled(SubSection)`
   
