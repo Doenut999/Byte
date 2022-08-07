@@ -14,6 +14,7 @@ const NavBar = () => {
 }
 
 const Nav = styled.nav`
+  z-index: 50;
   height: 8.33vh;
   width: 100%;
   position: fixed;
