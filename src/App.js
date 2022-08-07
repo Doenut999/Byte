@@ -1,20 +1,17 @@
-import HomePage from "./pages/HomePage";
-import GlobalStyle from "./components/GlobalStyle";
+// import {useState} from "react";
+import Paywall from "./components/Paywall";
+import Home from "./pages/Home"
 import {Route, Routes} from "react-router-dom";
-import Menu from "./pages/Menu";
-import NavBar from "./components/NavBar";
-import Sidebar from "./components/Sidebar";
 
 const App = ()  =>{
+  // const [loggedIn, setLoggedIn] = useState(false)
   return (
     <>
-        <GlobalStyle />
-        <Sidebar />
-        <NavBar />
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="menu" element={<Menu />} />
-        </Routes>
+      {/*{loggedIn ? <Home /> : <Paywall setLoggedIn={setLoggedIn} />}*/}
+      <Routes>
+        <Route path="/" element={<Paywall />} />
+        <Route path="/welcome" element={<Home />} />
+      </Routes>
     </>
   );
 }
