@@ -25,6 +25,7 @@ const SearchImg =styled.img`
 const SearchInput = styled.input`
     width: 40vw;
   outline: transparent;
+  background-color: transparent;
   border: 1px solid transparent;
   
 `

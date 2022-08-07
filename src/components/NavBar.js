@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const NavBar = () => {
-
     return (
         <>
             <NavStyles>
@@ -22,9 +21,11 @@ const NavStyles = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: purple;
+  background-color: blueviolet;
+  border-bottom: 3px solid white;
   z-index: 22;
   color: white;
+  
 `
 
 const Logo = styled.div`

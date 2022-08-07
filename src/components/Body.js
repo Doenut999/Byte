@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import SearchAll from "./SearchAll";
+import {useParams} from "react-router-dom";
 
-const Body = () => {
-
+const Body = (props) => {
+    useParams()
 
     return (
         <BodyStyles>
             <HoriRule/>
-            <SearchAll />
+            {props.children}
         </BodyStyles>
     )
 }
@@ -16,7 +16,8 @@ const BodyStyles = styled.div`
   width: 80vw;
   height: 100vh;
   float: right;
-  border: 1px solid red;
+  background-color: #1b1b1b;
+  border: 3px solid red;
   
 `
 
