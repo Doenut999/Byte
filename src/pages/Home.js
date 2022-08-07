@@ -1,8 +1,13 @@
+import Sidebar from "../components/SideBar";
+import Body from "../components/Body";
+
 const Home = () => {
-    
+
     return (
         <>
-            <h1>New Component sir</h1>
+            <Sidebar />
+            <Body />
+
         </>
     )
 }
