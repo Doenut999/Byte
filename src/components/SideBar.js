@@ -4,31 +4,46 @@ import SpecialOrder from "../assets/SpecialOrder.svg";
 import Favs from "../assets/Favs.svg";
 import LogOut from "../assets/LogOut.svg";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const Sidebar = () => {
     return (
         <>
             <Side>
-                <Div className="order-history">
-                    <SideBarImg src={OrderHistory} alt="yay" title="order-history"/>
-                    <SideText>Order History</SideText>
+
+                <Div>
+
                 </Div>
-                <Div className="promotions-n-deals">
-                    <SideBarImg src={Promo} alt="yay"  title="deals and promo"/>
-                    <SideText>Deals & Promos</SideText>
-                </Div>
-                <Div className="special-order">
-                    <SideBarImg src={SpecialOrder} alt="yay"  title="special-order"/>
-                    <SideText>Special Order</SideText>
-                </Div>
-                <Div className="favorites">
-                    <SideBarImg src={Favs} alt="baba" title="favorites"/>
-                    <SideText>Favorites</SideText>
-                </Div>
-                <Div className="log-out">
-                    <SideBarImg src={LogOut} alt="bobo" title="log-out"/>
-                    <SideText>Log Out</SideText>
-                </Div>
+                <SLink to="order-history">
+                    <Div className="order-history">
+                        <SideBarImg src={OrderHistory} alt="yay" title="order-history"/>
+                        <SideText>Order History</SideText>
+                    </Div>
+                </SLink>
+                <SLink to="promotions">
+                    <Div className="promotions-n-deals">
+                        <SideBarImg src={Promo} alt="yay"  title="deals and promo"/>
+                        <SideText>Deals & Promos</SideText>
+                    </Div>
+                </SLink>
+                <SLink to="special-order">
+                    <Div className="special-order">
+                        <SideBarImg src={SpecialOrder} alt="yay"  title="special-order"/>
+                        <SideText>Special Order</SideText>
+                    </Div>
+                </SLink>
+                <SLink to="favorites">
+                    <Div className="favorites">
+                        <SideBarImg src={Favs} alt="baba" title="favorites"/>
+                        <SideText>Favorites</SideText>
+                    </Div>
+                </SLink>
+                <SLink to="/">
+                    <Div className="log-out">
+                        <SideBarImg src={LogOut} alt="bobo" title="log-out"/>
+                        <SideText>Log Out</SideText>
+                    </Div>
+                </SLink>
             </Side>
         </>
     )
@@ -36,9 +51,9 @@ const Sidebar = () => {
 
 const Div = styled.div`
   width: 100%;
-  height: 20%;
+  height: 16%;
   display: flex;
-  border-bottom: 1px solid darkblue;
+  //border-bottom: 1px solid darkblue;
   //justify-content: space-between;
   align-items: center;
   //border: 1px solid cadetblue;
@@ -67,6 +82,16 @@ const SideBarImg = styled.img`
 
 const SideText = styled.span`
   color: white;
+`
+
+const SLink = styled(Link)`
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    text-decoration: white underline;
+  }
 `
 
 export default Sidebar

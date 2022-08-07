@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import SearchAll from "./SearchAll";
+import {useParams} from "react-router-dom";
 
-const Body = () => {
+const Body = (props) => {
+    useParams()
 
     return (
         <BodyStyles>
             <HoriRule/>
-            <SearchAll />
+            {props.children}
         </BodyStyles>
     )
 }
