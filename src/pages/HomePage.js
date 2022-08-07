@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import NavBar from "../components/NavBar";
 import {Link} from "react-router-dom";
 import Menu from "./Menu";
 
 const HomePage = () => {
 
     return (
-    <>
-        <NavBar />
+    <SectionWrapper>
         <Section style={{backgroundColor: "#fff", marginTop: "8.33vh"}} className="first">
             <SubSectionA1>First Section</SubSectionA1>
             <SubSectionA2 style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
@@ -29,7 +27,7 @@ const HomePage = () => {
             <SubSectionD1>First Section</SubSectionD1>
             <SubSectionD2>First Section II</SubSectionD2>
         </Section>
-    </>
+    </SectionWrapper>
     )
 
 }
@@ -37,7 +35,9 @@ const HomePage = () => {
 const Section = styled.section`
   height: 100vh;
   display: flex;
-  width: 100%;
+  width: 90vw;
+  min-width: 200px;
+  border: 1px solid crimson;
   @media (max-width: 700px){
     flex-direction: column;
   }
@@ -46,6 +46,9 @@ const Section = styled.section`
 const SubSection = styled.section`
   width: 50vw;
   height: 100%;
+  padding: 3vw;
+  min-width: 200px;
+  border: 1px solid crimson;
   @media (max-width: 700px) {
     flex: 1;
     width: 100%;
@@ -60,6 +63,11 @@ const Input = styled.input`
     outline:0  transparent;
     display: inline-block;
     border: 0 transparent;
+`
+
+const SectionWrapper = styled.div`
+  width: 90vw;
+  float: right;
 `
 
 const Mix = styled.div`
