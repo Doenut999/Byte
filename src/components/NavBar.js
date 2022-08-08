@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Bag from "../assets/Bagg.svg"
 
+
 const NavBar = () => {
     return (
         <>
             <NavStyles>
+
                 <Logo>
                     Byte
                 </Logo>

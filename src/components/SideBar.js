@@ -1,47 +1,58 @@
-import OrderHistory from "../assets/OrderHistory.svg";
-import Promo from "../assets/promo.svg";
-import SpecialOrder from "../assets/SpecialOrder.svg";
-import Favs from "../assets/Favs.svg";
-import LogOut from "../assets/LogOut.svg";
+import OrderHistory from "../assets/side-icons/OrderHistory.svg";
+import Promo from "../assets/side-icons/promo.svg";
+import SpecialOrder from "../assets/side-icons/SpecialOrder.svg";
+import Favs from "../assets/side-icons/Favs.svg";
+import LogOut from "../assets/side-icons/LogOut.svg";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 const Sidebar = () => {
+
     return (
         <>
             <Side>
-
                 <Div>
-
                 </Div>
                 <SLink to="order-history">
                     <Div className="order-history">
-                        <SideBarImg src={OrderHistory} alt="yay" title="order-history"/>
-                        <SideText>Order History</SideText>
+                        <SideImg>
+                            <SideBarImg src={OrderHistory} alt="yay" title="order-history"/>
+                        </SideImg>
+                        <>
+                            <SideText>Order History</SideText>
+                        </>
                     </Div>
                 </SLink>
                 <SLink to="promotions">
                     <Div className="promotions-n-deals">
-                        <SideBarImg src={Promo} alt="yay"  title="deals and promo"/>
-                        <SideText>Deals & Promos</SideText>
+                        <SideImg>
+                            <SideBarImg src={Promo} alt="yay"  title="deals and promo"/>
+                        </SideImg>
+                        <><SideText>Deals & Promos</SideText></>
                     </Div>
                 </SLink>
                 <SLink to="special-order">
                     <Div className="special-order">
-                        <SideBarImg src={SpecialOrder} alt="yay"  title="special-order"/>
-                        <SideText>Special Order</SideText>
+                        <SideImg>
+                            <SideBarImg src={SpecialOrder} alt="yay"  title="special-order"/>
+                        </SideImg>
+                        <><SideText>Special Order</SideText></>
                     </Div>
                 </SLink>
                 <SLink to="favorites">
                     <Div className="favorites">
-                        <SideBarImg src={Favs} alt="baba" title="favorites"/>
-                        <SideText>Favorites</SideText>
+                        <SideImg>
+                            <SideBarImg src={Favs} alt="baba" title="favorites"/>
+                        </SideImg>
+                        <><SideText>Favorites</SideText></>
                     </Div>
                 </SLink>
                 <SLink to="/">
                     <Div className="log-out">
-                        <SideBarImg src={LogOut} alt="bobo" title="log-out"/>
-                        <SideText>Log Out</SideText>
+                        <SideImg>
+                            <SideBarImg src={LogOut} alt="bobo" title="log-out"/>
+                        </SideImg>
+                        <><SideText>Log Out</SideText></>
                     </Div>
                 </SLink>
             </Side>
@@ -49,22 +60,27 @@ const Sidebar = () => {
     )
 }
 
+
 const Div = styled.div`
   width: 100%;
-  height: 16%;
+  height: 40%;
   display: flex;
-  //border-bottom: 1px solid darkblue;
-  //justify-content: space-between;
-  align-items: center;
-  //border: 1px solid cadetblue;
+  //justify-content: center;
+  //align-items: center;
+  padding: 1vh 1vw;
+  flex-flow: row nowrap;
+
 `
+
 const Side = styled.aside`
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: -2;
+  z-index: 1;
   height: 90vh;
   width: 20vw;
+  transform: scale(${props => (props.isOpen) ? 0 : 1});
+  
   min-width: 80px;
   background-color: blueviolet;
   display: flex;
@@ -74,17 +90,34 @@ const Side = styled.aside`
 `
 
 
+const SideImg = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  &:hover {
+    transform: scale(1.2);
+  }
+  transition: transform 1s ease;
+  
+`
+
+
 const SideBarImg = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 5vh;
+  height: 5vh;
   margin-left: 30px;
 `
 
 const SideText = styled.span`
   color: white;
+  font-size: 1vw;
+  margin-top: 10%;
 `
 
 const SLink = styled(Link)`
+  height: 15%;
+  width: 100%;
+  
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -95,3 +128,4 @@ const SLink = styled(Link)`
 `
 
 export default Sidebar
+
