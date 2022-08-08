@@ -8,14 +8,36 @@ import Sidebar from "./components/SideBar";
 import OrderHistory from "./pages/OrderHistory";
 import Promotions from "./pages/Promotions";
 import SpecialOrder from "./pages/SpecialOrder";
+import {useEffect, useState} from "react";
+import MobileSide from "./components/MobileSide";
 
 const App = ()  =>{
+    const [width, setWindowWidth] = useState(0);
+
+    const responsive = {
+    showTopNavMenu: width > 1023
+}
+    useEffect(() => {
+        updateDimensions();
+
+        window.addEventListener("resize", updateDimensions)
+        return () => window.removeEventListener("resize", updateDimensions)
+    }, [])
+        const updateDimensions = () => {
+        const width = window.innerWidth
+        setWindowWidth(width)
+    }
 
   return (
     <>
         <GlobalStyle />
-        <NavBar/>
-        <Sidebar />
+        { responsive.showTopNavMenu ?
+                <>
+                    <NavBar />
+                    <Sidebar />
+                </> :
+                <MobileSide />
+        }
       <Routes>
         <Route path="/" element={<Paywall />} />
         <Route path="welcome" element={<Home />} />
