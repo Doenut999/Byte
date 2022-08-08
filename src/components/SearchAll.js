@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 
 const SearchAll = () => {
+    
     const SearchText = "Look up, food/drink, item or vendor/store"
-
     return (
         <>
             <SafeSearch>
@@ -23,11 +23,12 @@ const SearchImg =styled.img`
     }
 `
 const SearchInput = styled.input`
-    width: 40vw;
+  width: 40vw;
   outline: transparent;
+  color: #ffffff;
   background-color: transparent;
   border: 1px solid transparent;
-  
+
 `
 
 const SafeSearch = styled.div`
@@ -38,7 +39,7 @@ const SafeSearch = styled.div`
   padding: 10px;
   border-radius: 18px;
   margin-left: 20vw;
-  border: 1px solid red;
+  border: 1px solid white;
 `
 
 export default SearchAll
