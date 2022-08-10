@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Bag from "../assets/Bagg.svg"
+import {Link} from "react-router-dom";
 
 
 const NavBar = () => {
@@ -7,9 +8,9 @@ const NavBar = () => {
         <>
             <NavStyles>
 
-                <Logo>
-                    Byte
-                </Logo>
+                <SLink to="welcome">
+                    <Logo>Byte</Logo>
+                </SLink>
                 <Img src={Bag} alt="shopping bag"/>
             </NavStyles>
         </>
@@ -32,6 +33,8 @@ const NavStyles = styled.nav`
   
 `
 
+
+
 const Img = styled.img`
   height: 60px;
   width: 60px;
@@ -40,6 +43,11 @@ const Img = styled.img`
 
 const Logo = styled.div`
 margin-left: 10vw;
+`
+const SLink = styled(Link)`
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
 `
 
 export default NavBar

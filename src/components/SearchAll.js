@@ -7,10 +7,12 @@ const SearchAll = () => {
     const SearchText = "Look up, food/drink, item or vendor/store"
     return (
         <>
-            <SafeSearch>
-                <SearchInput type="text" placeholder={SearchText}/>
-                <SearchImg onClick={()=> console.log("What you trying to search?")} src={Search} alt={SearchText}/>
-            </SafeSearch>
+            <>
+                <SearchBorder>
+                    <SearchInput type="text" placeholder={SearchText}/>
+                    <SearchImg onClick={()=> console.log("What you trying to search?")} src={Search} alt={SearchText}/>
+                </SearchBorder>
+            </>
         </>
     )
 }
@@ -26,20 +28,19 @@ const SearchInput = styled.input`
   width: 40vw;
   outline: transparent;
   color: #ffffff;
+  font-size: .4rem;
+  font-weight: lighter;
+  display: inline;
   background-color: transparent;
   border: 1px solid transparent;
 
 `
-
-const SafeSearch = styled.div`
+const SearchBorder = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 37vw;
-  padding: 10px;
-  border-radius: 18px;
-  margin-left: 20vw;
-  border: 1px solid white;
+  border-bottom: 1.4px solid white;
+  width: 40vw;
+  position: relative;
+  left: 20vw;
 `
 
 export default SearchAll

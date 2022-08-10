@@ -1,20 +1,17 @@
 import styled from "styled-components"
 import CloseBurger from "../assets/burger/CloseBurger.svg"
-import ThreeBurger from "../assets/burger/ThreeBurger.svg"
-import {useState} from "react";
+// import ThreeBurger from "../assets/burger/ThreeBurger.svg"
+// import {useState} from "react";
 
 const MobileSide = (props) => {
-    const [isAct, setIsAct] = useState(true)
-    const activeBurger = isAct ? CloseBurger : ThreeBurger
+
 
 
     return (
         <>
             <MDiv>
-                <Burger active={isAct} onClick={()=> {
-
-                } }  >
-                    <Img src={activeBurger} alt="hamburger-menu-open-close"/>
+                <Burger>
+                    <Img src={CloseBurger} alt="hamburger-menu-open-close"/>
                 </Burger>
             </MDiv>
         </>
@@ -22,7 +19,7 @@ const MobileSide = (props) => {
 }
 
 const Burger = styled.div`
-  border: ${props => props.active ? "2px solid white" : "none"};
+  border: 2px solid white;
   border-radius: 50%;
   padding: 5px;
   position: absolute;
