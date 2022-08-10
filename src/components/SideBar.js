@@ -79,8 +79,6 @@ const Side = styled.aside`
   z-index: 1;
   height: 90vh;
   width: 20vw;
-  transform: scale(${props => (props.isOpen) ? 0 : 1});
-  
   min-width: 80px;
   background-color: blueviolet;
   display: flex;
