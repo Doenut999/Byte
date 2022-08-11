@@ -1,11 +1,12 @@
-import {Link} from "react-router-dom";
+import Body from "./Body";
 
 const Paywall = () => {
 
     return (
         <>
-            <h1>New Component</h1>
-            <Link to="welcome">Log In</Link>
+            <Body>
+                    <h3 style={{color: "white"}}>Sign In or Create a New Account</h3>
+            </Body>
         </>
     )
 }

@@ -1,12 +1,14 @@
-import Sidebar from "../components/SideBar";
 import Body from "../components/Body";
+import SearchAll from "../components/SearchAll";
 
 const Home = () => {
 
     return (
         <>
-            <Sidebar />
-            <Body />
+            <Body>
+                <SearchAll />
+            </Body>
+
 
         </>
     )
