@@ -11,7 +11,6 @@ import SpecialOrder from "./pages/SpecialOrder";
 import {useEffect, useState} from "react";
 import MobileSideBar from "./components/MobileSideBar";
 import ShowButton from "./components/ShowButton";
-import {motion} from "framer-motion";
 
 const App = ()  =>{
     const [show, setShow] = useState(false)
@@ -37,11 +36,11 @@ const App = ()  =>{
         { responsive.showTopNavMenu ?
                 <>
                     <NavBar />
-                    <Sidebar />
+                    <Sidebar  />
                 </> :
            <>
                <ShowButton show={show} setShow={setShow} />
-               { show && <MobileSideBar as={motion.aside}/>}
+               {show && <MobileSideBar show={show}/>}
            </>
         }
       <Routes>
