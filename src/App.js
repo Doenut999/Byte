@@ -9,8 +9,9 @@ import OrderHistory from "./pages/OrderHistory";
 import Promotions from "./pages/Promotions";
 import SpecialOrder from "./pages/SpecialOrder";
 import {useEffect, useState} from "react";
-import MobileSideBar from "./components/MobileSideBar";
 import ShowButton from "./components/ShowButton";
+import MobileSideBar from "./components/MobileSideBar";
+import {AnimatePresence} from "framer-motion";
 
 const App = ()  =>{
     const [show, setShow] = useState(false)
@@ -21,7 +22,6 @@ const App = ()  =>{
 }
     useEffect(() => {
         updateDimensions();
-
         window.addEventListener("resize", updateDimensions)
         return () => window.removeEventListener("resize", updateDimensions)
     }, [])
@@ -40,7 +40,9 @@ const App = ()  =>{
                 </> :
            <>
                <ShowButton show={show} setShow={setShow} />
-               {show && <MobileSideBar show={show}/>}
+              <AnimatePresence>
+                  {show && <MobileSideBar key="indigo" exit={{width: 0}}/>}
+              </AnimatePresence>
            </>
         }
       <Routes>
@@ -56,9 +58,6 @@ const App = ()  =>{
     </>
   );
 }
-
-
-
 export default App;
 
 
