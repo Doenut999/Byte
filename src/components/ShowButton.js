@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-const ShowButton = ({show, setShow}) => {
+const ShowButton = ({setShow}) => {
+
     const toggleSideBar = () => {
-        setShow(!show)
+        setTimeout(()=> {
+            setShow(prevShow => !prevShow)
+        }, 600)
     }
 
     return (

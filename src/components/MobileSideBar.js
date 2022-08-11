@@ -2,31 +2,40 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
 
-const MobileSideBar = ( ) => {
+const MobileSideBar = () => {
 
     const initialStyles = {
-        x: -400
+        width: 0
     }
 
     const animatedStyles = {
-        x: 0
+        width: "25vw"
     }
 
     const transition = {
         delay: 0.05,
-        duration: 1.35
+        type: "spring",
+        duration: 0.35,
+        stiffness: 100
+    }
+    const transition2 = {
+        delay: 0,
+        type: "tween",
+        duration: 0.65,
     }
 
     return (
         <>
-            <StyledBar as={motion.aside} initial={initialStyles} animate={animatedStyles} transition={transition} >
-                <div className="spacing" style={{height: "25%"}}></div>
-                <Slink as={motion.a}   to="order-history">Order History</Slink>
-                <Slink as={motion.a}  to="promotions">Promotions</Slink>
-                <Slink as={motion.a}  to="special-order">Special Order</Slink>
-                <Slink as={motion.a}  to="favorites">Favorites</Slink>
-                <Slink as={motion.a}  to="/">Log Out</Slink>
-            </StyledBar>
+                <StyledBar key="sidebar" as={motion.aside} initial={initialStyles} animate={animatedStyles}
+                           transition={transition} exit={{width: 0, transition: transition2}}>
+                    <div className="spacing" style={{height: "25%"}}></div>
+                    <Slink as={motion.a} to="order-history">Order History</Slink>
+                    <Slink as={motion.a} to="promotions">Promotions</Slink>
+                    <Slink as={motion.a} to="special-order">Special Order</Slink>
+                    <Slink as={motion.a} to="favorites">Favorites</Slink>
+                    <Slink as={motion.a} to="/">Log Out</Slink>
+                </StyledBar>
+
         </>
     )
 
