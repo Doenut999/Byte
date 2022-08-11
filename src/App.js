@@ -41,7 +41,7 @@ const App = ()  =>{
            <>
                <ShowButton show={show} setShow={setShow} />
               <AnimatePresence>
-                  {show && <MobileSideBar key="indigo" exit={{width: 0}}/>}
+                  {show && <MobileSideBar key="indigo" />}
               </AnimatePresence>
            </>
         }
