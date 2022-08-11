@@ -23,11 +23,10 @@ const MobileSideBar = () => {
         type: "tween",
         duration: 0.65,
     }
-
     return (
         <>
                 <StyledBar key="sidebar" as={motion.aside} initial={initialStyles} animate={animatedStyles}
-                           transition={transition} exit={{width: 0, transition: transition2}}>
+                           transition={transition} exit={ {width: 0, transition: transition2} }>
                     <div className="spacing" style={{height: "25%"}}></div>
                     <Slink as={motion.a} to="order-history">Order History</Slink>
                     <Slink as={motion.a} to="promotions">Promotions</Slink>
@@ -35,10 +34,7 @@ const MobileSideBar = () => {
                     <Slink as={motion.a} to="favorites">Favorites</Slink>
                     <Slink as={motion.a} to="/">Log Out</Slink>
                 </StyledBar>
-
-        </>
-    )
-
+        </>)
 }
 
 const StyledBar = styled.aside`
@@ -47,6 +43,7 @@ const StyledBar = styled.aside`
   top: 0;
   height: 80vh;
   width: 25vw;
+  opacity: 0.4;
   margin-top: 6vh;
   background-color: blueviolet;
   color: white;
