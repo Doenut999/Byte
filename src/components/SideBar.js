@@ -6,7 +6,7 @@ import LogOut from "../assets/side-icons/LogOut.svg";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 
     return (
         <>
@@ -76,11 +76,12 @@ const Side = styled.aside`
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 11;
   height: 90vh;
   width: 20vw;
   min-width: 80px;
-  background-color: blueviolet;
+  //background-color: blueviolet;
+  background-color: #556b3e;
   display: flex;
   justify-content: space-between;
   align-items: center;
