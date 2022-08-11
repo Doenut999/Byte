@@ -43,7 +43,7 @@ const StyledBar = styled.aside`
   top: 0;
   height: 80vh;
   width: 25vw;
-  opacity: 0.4;
+  opacity: 0.40;
   margin-top: 6vh;
   background-color: blueviolet;
   color: white;
