@@ -9,9 +9,12 @@ import OrderHistory from "./pages/OrderHistory";
 import Promotions from "./pages/Promotions";
 import SpecialOrder from "./pages/SpecialOrder";
 import {useEffect, useState} from "react";
-import MobileSide from "./components/MobileSide";
+import MobileSideBar from "./components/MobileSideBar";
+import ShowButton from "./components/ShowButton";
+import {motion} from "framer-motion";
 
 const App = ()  =>{
+    const [show, setShow] = useState(false)
     const [width, setWindowWidth] = useState(0);
 
     const responsive = {
@@ -36,7 +39,10 @@ const App = ()  =>{
                     <NavBar />
                     <Sidebar />
                 </> :
-                <MobileSide />
+           <>
+               <ShowButton show={show} setShow={setShow} />
+               { show && <MobileSideBar as={motion.aside}/>}
+           </>
         }
       <Routes>
         <Route path="/" element={<Paywall />} />
@@ -55,3 +61,5 @@ const App = ()  =>{
 
 
 export default App;
+
+

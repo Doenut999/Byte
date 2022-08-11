@@ -28,7 +28,7 @@ const NavStyles = styled.nav`
   left: 0;
   background-color: blueviolet;
   border-bottom: 3px solid white;
-  z-index: 2;
+  z-index: 12;
   color: white;
   
 `
