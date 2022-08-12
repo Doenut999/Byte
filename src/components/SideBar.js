@@ -55,7 +55,7 @@ const Sidebar = (props) => {
                         </>
                     </Div>
                 </SLink>
-                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="promotions">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.3}} exit={{fontSize: 0, transition: transition2}} to="promotions">
                     <Div className="promotions-n-deals">
                         <SideImg>
                             <SideBarImg src={Promo} alt="yay"  title="deals and promo"/>
@@ -63,7 +63,7 @@ const Sidebar = (props) => {
                         <><SideText>Deals & Promos</SideText></>
                     </Div>
                 </SLink>
-                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="special-order">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0, transition: transition2}} to="special-order">
                     <Div className="special-order">
                         <SideImg>
                             <SideBarImg src={SpecialOrder} alt="yay"  title="special-order"/>
@@ -71,7 +71,7 @@ const Sidebar = (props) => {
                         <><SideText>Special Order</SideText></>
                     </Div>
                 </SLink>
-                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="favorites">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0, transition: transition2}} to="favorites">
                     <Div className="favorites">
                         <SideImg>
                             <SideBarImg src={Favs} alt="baba" title="favorites"/>
@@ -79,7 +79,7 @@ const Sidebar = (props) => {
                         <><SideText>Favorites</SideText></>
                     </Div>
                 </SLink>
-                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="/">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.6}} exit={{fontSize: 0, transition: transition2}} to="/">
                     <Div className="log-out">
                         <SideImg>
                             <SideBarImg src={LogOut} alt="bobo" title="log-out"/>
