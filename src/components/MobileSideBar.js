@@ -66,10 +66,11 @@ const StyledBar = styled.aside`
 
 const Slink = styled(Link)`
   width: 100%;
+  padding: 3px;
   height: 15%;
   display: flex;
   justify-content: center;
-  font-size: 21px;
+  font-size: 20px;
   align-items: center;
   text-align: center;
   cursor: pointer;
