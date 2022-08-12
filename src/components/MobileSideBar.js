@@ -6,12 +6,10 @@ const MobileSideBar = () => {
 
     const initialStyles = {
         width: 0,
-        opacity:0
     }
 
     const animatedStyles = {
         width: "25vw",
-        opacity: 1
     }
     const transition = {
         type: "spring",
@@ -25,11 +23,14 @@ const MobileSideBar = () => {
     }
 
     const initialLink = {
-        y: "100vh"
+        y: "100vh",
+        opacity:0
+
     }
 
     const animateLink = {
-        y: 0
+        y: 0,
+        opacity: 1
     }
     const transitionLink = {
         type: "spring",
