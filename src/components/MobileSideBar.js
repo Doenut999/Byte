@@ -5,11 +5,13 @@ import {motion} from "framer-motion";
 const MobileSideBar = () => {
 
     const initialStyles = {
-        width: 0
+        width: 0,
+        opacity:0
     }
 
     const animatedStyles = {
-        width: "25vw"
+        width: "25vw",
+        opacity: 1
     }
     const transition = {
         type: "spring",
