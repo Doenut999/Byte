@@ -51,12 +51,12 @@ const MobileSideBar = () => {
 
 const StyledBar = styled.aside`
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+  margin-top: 20vh;
   height: 80vh;
   width: 25vw;
   opacity: 0.40;
-  margin-top: 6vh;
   background-color: blueviolet;
   color: white;
   z-index: 15;
@@ -76,7 +76,7 @@ const Slink = styled(Link)`
   text-decoration: none;
   color: white;
   @media (max-width: 300px) {
-    font-size: 13px;
+    font-size: 14px;
   }
 
 `
