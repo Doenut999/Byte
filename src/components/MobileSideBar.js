@@ -40,11 +40,11 @@ const MobileSideBar = () => {
                 <StyledBar key="sidebar" as={motion.aside} initial={initialStyles} animate={animatedStyles}
                            transition={transition} exit={ {width: 0, transition: transition2} }>
                     <div className="spacing" style={{height: "25%"}}></div>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="order-history">Order History</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="promotions">Promotions</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="special-order">Special Order</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="favorites">Favorites</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="/">Log Out</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="order-history">Order History</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="promotions">Promotions</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="special-order">Special Order</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="favorites">Favorites</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="/">Log Out</Slink>
                 </StyledBar>
         </>)
 }

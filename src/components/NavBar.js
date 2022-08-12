@@ -1,14 +1,34 @@
 import styled from "styled-components";
 import Bag from "../assets/Bagg.svg"
 import {Link} from "react-router-dom";
+import {motion} from "framer-motion";
 
 
 const NavBar = () => {
+    const transition2 = {
+        delay: 0,
+        type: "tween",
+        duration: 0.65,
+    }
+
+    const initialLink = {
+        y: -100
+    }
+
+    const animateLink = {
+        y: 0
+    }
+    const transitionLink = {
+        type: "spring",
+        delay: 0.2,
+        duration: 2500,
+        stiffness: 100
+    }
     return (
         <>
             <NavStyles>
 
-                <SLink to="welcome">
+                <SLink to="welcome" as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}}>
                     <Logo>Byte</Logo>
                 </SLink>
                 <Img src={Bag} alt="shopping bag"/>
