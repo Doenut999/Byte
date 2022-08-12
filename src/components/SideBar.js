@@ -8,18 +8,7 @@ import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
 
 const Sidebar = (props) => {
-    const initialStyles = {
-        width: 0
-    }
 
-    const animatedStyles = {
-        width: "25vw"
-    }
-    const transition = {
-        type: "spring",
-        duration: 0.35,
-        stiffness: 100
-    }
     const transition2 = {
         delay: 0,
         type: "tween",

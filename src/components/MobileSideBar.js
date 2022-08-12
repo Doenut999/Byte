@@ -77,7 +77,7 @@ const Slink = styled(Link)`
   text-decoration: none;
   color: white;
   @media (max-width: 300px) {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 `
