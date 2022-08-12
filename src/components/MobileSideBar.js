@@ -69,12 +69,15 @@ const Slink = styled(Link)`
   height: 15%;
   display: flex;
   justify-content: center;
-  font-size: calc (15px + 1/256vw);
+  font-size: 15px;
   align-items: center;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
   color: white;
+  @media (max-width: 300px) {
+    font-size: 13px;
+  }
 
 `
 
