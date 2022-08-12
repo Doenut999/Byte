@@ -76,7 +76,7 @@ const Slink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: white;
-  @media (max-width: 300px) {
+  @media (max-width: 400px) {
     font-size: 13px;
   }
 
