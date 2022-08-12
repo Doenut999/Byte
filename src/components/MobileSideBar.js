@@ -53,7 +53,7 @@ const StyledBar = styled.aside`
   position: absolute;
   top: 0;
   left: 0;
-  margin-top: 20vh;
+  margin-top: 10vh;
   height: 80vh;
   width: 25vw;
   opacity: 0.40;
@@ -69,7 +69,7 @@ const Slink = styled(Link)`
   height: 15%;
   display: flex;
   justify-content: center;
-  font-size: 15px;
+  font-size: 18px;
   align-items: center;
   text-align: center;
   cursor: pointer;
