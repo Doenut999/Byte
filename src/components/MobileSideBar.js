@@ -69,7 +69,7 @@ const Slink = styled(Link)`
   height: 15%;
   display: flex;
   justify-content: center;
-  font-size: 24px;
+  font-size: 21px;
   align-items: center;
   text-align: center;
   cursor: pointer;
