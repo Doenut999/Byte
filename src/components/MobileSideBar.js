@@ -43,7 +43,7 @@ const MobileSideBar = () => {
                 <StyledBar key="sidebar" as={motion.aside} initial={initialStyles} animate={animatedStyles}
                            transition={transition} exit={ {width: 0, transition: transition2} }>
                     <div className="spacing" style={{height: "25%"}}></div>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.3}} exit={{fontSize: 0, }} to="order-history">Order History</Slink>
+                    <Slink onClick={()=> {}} as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.3}} exit={{fontSize: 0, }} to="order-history">Order History</Slink>
                     <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0}} to="promotions">Promotions</Slink>
                     <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0}} to="special-order">Special Order</Slink>
                     <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.6}} exit={{fontSize: 0}} to="favorites">Favorites</Slink>
@@ -79,6 +79,9 @@ const Slink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: white;
+  @media (min-width: 600px) {
+    font-size: 20px;
+  }
   @media (max-width: 400px) {
     font-size: 13px;
   }
