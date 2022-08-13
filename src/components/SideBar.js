@@ -102,7 +102,7 @@ const Side = styled.aside`
   width: 20vw;
   min-width: 80px;
   //background-color: blueviolet;
-  background-color: #556b3e;
+  background-color: #454372;
   display: flex;
   justify-content: space-between;
   align-items: center;
