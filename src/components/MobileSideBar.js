@@ -5,11 +5,11 @@ import {motion} from "framer-motion";
 const MobileSideBar = () => {
 
     const initialStyles = {
-        width: 0
+        width: 0,
     }
 
     const animatedStyles = {
-        width: "25vw"
+        width: "25vw",
     }
     const transition = {
         type: "spring",
@@ -23,11 +23,14 @@ const MobileSideBar = () => {
     }
 
     const initialLink = {
-        y: "100vh"
+        y: "100vh",
+        opacity:0
+
     }
 
     const animateLink = {
-        y: 0
+        y: 0,
+        opacity: 1
     }
     const transitionLink = {
         type: "spring",
@@ -40,23 +43,23 @@ const MobileSideBar = () => {
                 <StyledBar key="sidebar" as={motion.aside} initial={initialStyles} animate={animatedStyles}
                            transition={transition} exit={ {width: 0, transition: transition2} }>
                     <div className="spacing" style={{height: "25%"}}></div>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="order-history">Order History</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="promotions">Promotions</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="special-order">Special Order</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="favorites">Favorites</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} to="/">Log Out</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.3}} exit={{fontSize: 0, }} to="order-history">Order History</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0}} to="promotions">Promotions</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0}} to="special-order">Special Order</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.6}} exit={{fontSize: 0}} to="favorites">Favorites</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.7}} exit={{fontSize: 0}} to="/">Log Out</Slink>
                 </StyledBar>
         </>)
 }
 
 const StyledBar = styled.aside`
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+  margin-top: 10vh;
   height: 80vh;
   width: 25vw;
   opacity: 0.40;
-  margin-top: 6vh;
   background-color: blueviolet;
   color: white;
   z-index: 15;
@@ -66,15 +69,19 @@ const StyledBar = styled.aside`
 
 const Slink = styled(Link)`
   width: 100%;
+  padding: 3px;
   height: 15%;
   display: flex;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 18px;
   align-items: center;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
   color: white;
+  @media (max-width: 400px) {
+    font-size: 13px;
+  }
 
 `
 

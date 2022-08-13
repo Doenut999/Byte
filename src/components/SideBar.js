@@ -5,15 +5,36 @@ import Favs from "../assets/side-icons/Favs.svg";
 import LogOut from "../assets/side-icons/LogOut.svg";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+import {motion} from "framer-motion";
 
 const Sidebar = (props) => {
+
+    const transition2 = {
+        delay: 0,
+        type: "tween",
+        duration: 0.65,
+    }
+
+    const initialLink = {
+        y: "100vh"
+    }
+
+    const animateLink = {
+        y: 0
+    }
+    const transitionLink = {
+        type: "spring",
+        delay: 0.2,
+        duration: 2500,
+        stiffness: 100
+    }
 
     return (
         <>
             <Side>
                 <Div>
                 </Div>
-                <SLink to="order-history">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}} to="order-history">
                     <Div className="order-history">
                         <SideImg>
                             <SideBarImg src={OrderHistory} alt="yay" title="order-history"/>
@@ -23,7 +44,7 @@ const Sidebar = (props) => {
                         </>
                     </Div>
                 </SLink>
-                <SLink to="promotions">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.3}} exit={{fontSize: 0, transition: transition2}} to="promotions">
                     <Div className="promotions-n-deals">
                         <SideImg>
                             <SideBarImg src={Promo} alt="yay"  title="deals and promo"/>
@@ -31,7 +52,7 @@ const Sidebar = (props) => {
                         <><SideText>Deals & Promos</SideText></>
                     </Div>
                 </SLink>
-                <SLink to="special-order">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0, transition: transition2}} to="special-order">
                     <Div className="special-order">
                         <SideImg>
                             <SideBarImg src={SpecialOrder} alt="yay"  title="special-order"/>
@@ -39,7 +60,7 @@ const Sidebar = (props) => {
                         <><SideText>Special Order</SideText></>
                     </Div>
                 </SLink>
-                <SLink to="favorites">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0, transition: transition2}} to="favorites">
                     <Div className="favorites">
                         <SideImg>
                             <SideBarImg src={Favs} alt="baba" title="favorites"/>
@@ -47,7 +68,7 @@ const Sidebar = (props) => {
                         <><SideText>Favorites</SideText></>
                     </Div>
                 </SLink>
-                <SLink to="/">
+                <SLink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.6}} exit={{fontSize: 0, transition: transition2}} to="/">
                     <Div className="log-out">
                         <SideImg>
                             <SideBarImg src={LogOut} alt="bobo" title="log-out"/>
