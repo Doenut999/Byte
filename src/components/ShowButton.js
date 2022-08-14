@@ -21,7 +21,7 @@ const Button = styled.button`
   border: none;
   padding: 8px;
   position: relative;
-  z-index: 20;
+  z-index: 10;
   cursor: pointer;
   box-shadow: 1px 1px 1px coral;
   border-radius: 4px;
