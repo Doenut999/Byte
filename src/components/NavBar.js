@@ -48,7 +48,7 @@ const NavStyles = styled.nav`
   left: 0;
   background-color: #454372;
   border-bottom: 3px solid white;
-  z-index: 12;
+  z-index: 2;
   color: white;
   
 `

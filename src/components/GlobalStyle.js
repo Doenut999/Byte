@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 32px;
     font-family: "Raleway", monospace;
    }
+  body {
+    background-color: #1b1b1b;
+  }
 `
 
 export default GlobalStyle

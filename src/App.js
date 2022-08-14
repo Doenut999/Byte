@@ -1,4 +1,4 @@
-import Paywall from "./components/Paywall";
+import Paywall from "./components/Paywall/Paywall";
 import Home from "./pages/Home"
 import {Route, Routes} from "react-router-dom";
 import GlobalStyle from "./components/GlobalStyle";
@@ -13,50 +13,51 @@ import ShowButton from "./components/ShowButton";
 import MobileSideBar from "./components/MobileSideBar";
 import {AnimatePresence} from "framer-motion";
 
-const App = ()  =>{
+const App = () => {
     const [show, setShow] = useState(false)
     const [width, setWindowWidth] = useState(0);
 
     const responsive = {
-    showTopNavMenu: width > 1023
-}
+        showTopNavMenu: width > 1023
+    }
     useEffect(() => {
         updateDimensions();
         window.addEventListener("resize", updateDimensions)
         return () => window.removeEventListener("resize", updateDimensions)
     }, [])
-        const updateDimensions = () => {
+    const updateDimensions = () => {
         const width = window.innerWidth
         setWindowWidth(width)
     }
 
-  return (
-    <>
-        <GlobalStyle />
-        { responsive.showTopNavMenu ?
+    return (
+        <>
+
+            <GlobalStyle/>
+            {responsive.showTopNavMenu ?
                 <>
-                    <NavBar />
-                    <Sidebar  />
+                    <NavBar/>
+                    <Sidebar/>
                 </> :
-           <>
-               <ShowButton show={show} setShow={setShow} />
-              <AnimatePresence>
-                  {show && <MobileSideBar key="indigo" />}
-              </AnimatePresence>
-           </>
-        }
-      <Routes>
-        <Route path="/" element={<Paywall />} />
-        <Route path="welcome" element={<Home />} />
-        <Route path="favorites" element={<Favorites />} />
-        <Route path="promotions" element={<Promotions />} />
-        <Route path="special-order" element={<SpecialOrder />} />
-        <Route path="order-history" element={<OrderHistory />} />
+                <>
+                    <ShowButton show={show} setShow={setShow}/>
+                    <AnimatePresence>
+                        {show && <MobileSideBar key="indigo"/>}
+                    </AnimatePresence>
+                </>
+            }
+            <Routes>
+                <Route path="/" element={<Paywall/>}/>
+                <Route path="welcome" element={<Home/>}/>
+                <Route path="favorites" element={<Favorites/>}/>
+                <Route path="promotions" element={<Promotions/>}/>
+                <Route path="special-order" element={<SpecialOrder/>}/>
+                <Route path="order-history" element={<OrderHistory/>}/>
 
 
-      </Routes>
-    </>
-  );
+            </Routes>
+        </>
+    );
 }
 export default App;
 
