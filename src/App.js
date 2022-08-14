@@ -12,6 +12,7 @@ import {useEffect, useState} from "react";
 import ShowButton from "./components/ShowButton";
 import MobileSideBar from "./components/MobileSideBar";
 import {AnimatePresence} from "framer-motion";
+import React, {Fragment} from "react";
 
 const App = () => {
     const [show, setShow] = useState(false)
@@ -47,8 +48,9 @@ const App = () => {
                 </>
             }
             <Routes>
-                <Route path="/" element={<Paywall/>}/>
-                <Route path="welcome" element={<Home/>}/>
+                <Route path="pw" element={<Paywall/>}/>
+                <Route path="*" element={<>where do you think you are going</>}/>
+                <Route path="/" element={<Home/>}/>
                 <Route path="favorites" element={<Favorites/>}/>
                 <Route path="promotions" element={<Promotions/>}/>
                 <Route path="special-order" element={<SpecialOrder/>}/>

@@ -62,7 +62,7 @@ const StyledBar = styled.aside`
   opacity: 0.6;
   background-color: #1A936F;
   color: white;
-  z-index: 15;
+  z-index: 12;
   display: flex;
   flex-flow: column nowrap;
 `
