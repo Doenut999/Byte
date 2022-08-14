@@ -1,26 +1,27 @@
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import { motion} from "framer-motion";
 
 
 const Paywall = () => {
     const initial = {
-        x: "-100vw",
+        x: 400,
+        opacity: 0.05
     }
+
     const initial2 = {
-        x: "100vw",
+        x: -400,
+        opacity: 0.05
     }
 
-    const animate= {
-        x: 0
+    const inView = {
+        x: 0,
+        opacity: 1
+
     }
-
-
 
     const transition = {
-        delay: 0.4,
-        duration: 1.1,
-        type: "spring",
-        stiffness: 50
+        delay: 0.6,
+        duration: 1.4
     }
     return (
         <PaywallView>
@@ -31,17 +32,17 @@ const Paywall = () => {
                     <button>Log In</button>
                 </Auth>
             </PaywallNav>
-            <TopSection >
-                <TopSectionLeft as={motion.section} initial={initial} animate={animate} transition={transition}></TopSectionLeft>
-                <TopSectionRight as={motion.section} initial={initial2} animate={animate} transition={transition}></TopSectionRight>
+            <TopSection>
+                <TopSectionLeft  as={motion.section} initial={initial} whileInView={inView} transition={transition} viewPort={{once: false, amount: 0.6}}></TopSectionLeft>
+                <TopSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition}  viewPort={{once: false, amount: 0.6}}></TopSectionRight>
             </TopSection>
-            <MidSection>
-                <MidSectionLeft as={motion.section}></MidSectionLeft>
-                <MidSectionRight as={motion.section}></MidSectionRight>
+            <MidSection >
+                <MidSectionLeft as={motion.section} initial={initial} whileInView={inView} transition={transition} viewPort={{once: false, amount: 0.6}}></MidSectionLeft>
+                <MidSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition} viewPort={{once: false, amount: 0.6}}></MidSectionRight>
             </MidSection>
             <BottomSection>
-                <BottomSectionLeft as={motion.section}></BottomSectionLeft>
-                <BottomSectionRight as={motion.section}></BottomSectionRight>
+                <BottomSectionLeft as={motion.section} initial={initial} whileInView={inView} transition={transition} viewPort={{once: false, amount: 0.6}}></BottomSectionLeft>
+                <BottomSectionRight as={motion.section}initial={initial2} whileInView={inView} transition={transition} viewPort={{once: false, amount: 0.6}} ></BottomSectionRight>
             </BottomSection>
         </PaywallView>
     )
