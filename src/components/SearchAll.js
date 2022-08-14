@@ -1,16 +1,21 @@
 import Search from "../assets/Search.svg";
 import styled from "styled-components";
-
+import {useEffect, useRef} from "react";
 
 const SearchAll = () => {
+
+    const searchItem = useRef()
+    useEffect(()=> {
+        searchItem.current.focus()
+    })
     
     const SearchText = "Look up, food/drink, item or vendor/store"
     return (
         <>
             <>
                 <SearchBorder>
-                    <SearchInput type="text" placeholder={SearchText}/>
-                    <SearchImg onClick={()=> console.log("What you trying to search?")} src={Search} alt={SearchText}/>
+                    <SearchInput ref={searchItem} type="text" placeholder={SearchText}/>
+                    <SearchImg   onClick={()=> console.log(searchItem.current.value)} src={Search} alt={SearchText}/>
                 </SearchBorder>
             </>
         </>

@@ -46,9 +46,9 @@ const NavStyles = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: blueviolet;
+  background-color: #454372;
   border-bottom: 3px solid white;
-  z-index: 12;
+  z-index: 2;
   color: white;
   
 `

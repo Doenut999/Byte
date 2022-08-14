@@ -97,12 +97,12 @@ const Side = styled.aside`
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: 11;
+  z-index: 2;
   height: 90vh;
   width: 20vw;
   min-width: 80px;
   //background-color: blueviolet;
-  background-color: #556b3e;
+  background-color: #454372;
   display: flex;
   justify-content: space-between;
   align-items: center;

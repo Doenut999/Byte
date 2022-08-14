@@ -14,6 +14,7 @@ const Body = (props) => {
 const BodyStyles = styled.div`
   position: relative;
   width: 80vw;
+  padding: 0 3vh;
   height: 100vh;
   float: right;
   background-color: #1b1b1b;
