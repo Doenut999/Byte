@@ -80,7 +80,7 @@ const PaywallNav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: 12vh;
+  height: 10vh;
   display: flex;
   z-index: 50;
   //justify-content: center;
@@ -185,7 +185,7 @@ const TopSectionRight = styled.section`
 const MidSectionLeft = styled.section`
   border: 4px solid white;
   width: 40vw;
-  height: 40vh;
+  height: 70vh;
   border-radius: 15px;
   margin-right: 5vw;
   margin-top: 80px;
@@ -201,7 +201,7 @@ const MidSectionLeft = styled.section`
 const MidSectionRight = styled.section`
   border: 4px solid white;
   width: 40vw;
-  height: 40vh;
+  height: 70vh;
   border-radius: 15px;
   margin-left: 5vw;
   margin-bottom: 80px;
@@ -217,7 +217,7 @@ const MidSectionRight = styled.section`
 const BottomSectionLeft = styled.section`
   border: 4px solid white;
   width: 40vw;
-  height: 40vh;
+  height: 70vh;
   border-radius: 15px;
   margin-right: 5vw;
   margin-top: 80px;
@@ -233,7 +233,7 @@ const BottomSectionLeft = styled.section`
 const BottomSectionRight = styled.section`
   border: 4px solid white;
   width: 40vw;
-  height: 40vh;
+  height: 70vh;
   border-radius: 15px;
   margin-left: 5vw;
   margin-bottom: 180px;
