@@ -1,26 +1,29 @@
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import { motion} from "framer-motion";
 
 
 const Paywall = () => {
     const initial = {
-        x: "-100vw",
+        opacity: 0,
+        // x: -400
     }
+
     const initial2 = {
-        x: "100vw",
+        // x: 400,
+        opacity: 0
     }
 
-    const animate= {
-        x: 0
+    const inView = {
+        // x: 0,
+        opacity: 1
+
     }
-
-
 
     const transition = {
-        delay: 0.4,
-        duration: 1.1,
+        delay: 0.6,
+        duration: 1.4,
         type: "spring",
-        stiffness: 50
+        stiffness: 40
     }
     return (
         <PaywallView>
@@ -31,17 +34,17 @@ const Paywall = () => {
                     <button>Log In</button>
                 </Auth>
             </PaywallNav>
-            <TopSection >
-                <TopSectionLeft as={motion.section} initial={initial} animate={animate} transition={transition}></TopSectionLeft>
-                <TopSectionRight as={motion.section} initial={initial2} animate={animate} transition={transition}></TopSectionRight>
+            <TopSection>
+                <TopSectionLeft  as={motion.section} initial={initial} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></TopSectionLeft>
+                <TopSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition}  viewport={{once: false, amount: 0.45}}></TopSectionRight>
             </TopSection>
-            <MidSection>
-                <MidSectionLeft as={motion.section}></MidSectionLeft>
-                <MidSectionRight as={motion.section}></MidSectionRight>
+            <MidSection >
+                <MidSectionLeft as={motion.section} initial={initial} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></MidSectionLeft>
+                <MidSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></MidSectionRight>
             </MidSection>
             <BottomSection>
-                <BottomSectionLeft as={motion.section}></BottomSectionLeft>
-                <BottomSectionRight as={motion.section}></BottomSectionRight>
+                <BottomSectionLeft as={motion.section} initial={initial} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></BottomSectionLeft>
+                <BottomSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}} ></BottomSectionRight>
             </BottomSection>
         </PaywallView>
     )
@@ -107,28 +110,41 @@ const TopSection = styled.section`
   align-items: center;
   justify-content: center;
   background-color: blue;
-  border: 1px saddlebrown dot-dash;
   padding: 10vh 5vw;
+  @media  (max-width: 1024px) {
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 0;
+  }
 `
 const MidSection = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #48ff00;
-  border: 1px #ffb200 dot-dash;
+  background-color: #82d068;
   padding: 10vh 10vw;
-
+  @media  (max-width: 1024px) {
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 0;
+  }
 
 `
 const BottomSection = styled.section`
   width: 100vw;
   height: 100vh;
-  background-color: #9e4444;
+  background-color: #e18200;
   display: flex;
+  justify-content: center;
+  position: relative;
   align-items: center;
-  border: 1px saddlebrown dot-dash;
   padding: 10vh 10vw;
+  @media (max-width: 1024px) {
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 6vh 0 0 0;
+  }
 `
 
 const TopSectionLeft = styled.div`
@@ -137,7 +153,12 @@ const TopSectionLeft = styled.div`
   height: 70vh;
   border-radius: 15px;
   margin-right: 5vw;
+  @media  (max-width: 1024px) {
 
+    margin: 0;
+    width: 70vw;
+    height: 40vh;
+  }
 `
 const TopSectionRight = styled.section`
   border: 4px solid white;
@@ -145,41 +166,65 @@ const TopSectionRight = styled.section`
   height: 70vh;
   border-radius: 15px;
   margin-left: 5vw;
+  @media  (max-width: 1024px) {
 
+    margin: 0;
+    width: 70vw;
+    height: 40vh;
+  }
 `
-const MidSectionLeft = styled.section` 
-  border: 1px solid cornflowerblue;
+const MidSectionLeft = styled.section`
+  border: 4px solid white;
   width: 40vw;
   height: 40vh;
   border-radius: 15px;
   margin-right: 5vw;
+  @media  (max-width: 1024px) {
 
+    margin: 0;
+    width: 70vw;
+    height: 40vh;
+  }
 
 `
 const MidSectionRight = styled.section`
-  border: 1px solid cornflowerblue;
+  border: 4px solid white;
   width: 40vw;
   height: 40vh;
   border-radius: 15px;
   margin-left: 5vw;
+  @media  (max-width: 1024px) {
 
+    margin: 0;
+    width: 70vw;
+    height: 40vh;
+  }
 
 `
 const BottomSectionLeft = styled.section`
-  border: 1px solid cornflowerblue;
+  border: 4px solid white;
   width: 40vw;
   height: 40vh;
   border-radius: 15px;
   margin-right: 5vw;
+  @media  (max-width: 1024px) {
 
+    margin: 0;
+    width: 70vw;
+    height: 40vh;
+  }
 
 `
-const BottomSectionRight = styled.section` 
-  border: 1px solid cornflowerblue;
+const BottomSectionRight = styled.section`
+  border: 4px solid white;
   width: 40vw;
   height: 40vh;
   border-radius: 15px;
   margin-left: 5vw;
-
+  @media  (max-width: 1024px) {
+    margin: 0;
+    width: 70vw;
+    height: 40vh;
+  }
 `
 export default Paywall
