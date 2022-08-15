@@ -66,7 +66,8 @@ margin-left: 10vw;
 
 const PaywallView = styled.div`
   z-index: 19;
-  position: relative;
+  //position: relative;
+  overflow-x: hidden;
 
   background-color: white;
   width: 100vw;
@@ -79,7 +80,7 @@ const PaywallNav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: 10vh;
+  height: 12vh;
   display: flex;
   z-index: 50;
   //justify-content: center;
