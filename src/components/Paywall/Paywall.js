@@ -66,7 +66,7 @@ margin-left: 10vw;
 
 const PaywallView = styled.div`
   z-index: 19;
-  //position: relative;
+  position: relative;
   overflow-x: hidden;
 
   background-color: white;
