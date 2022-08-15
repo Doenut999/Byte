@@ -5,21 +5,28 @@ import { motion} from "framer-motion";
 const Paywall = () => {
     const initial = {
         opacity: 0,
-        // x: -400
+        x: "50vw"
     }
 
     const initial2 = {
-        // x: 400,
+        x: "-50vw",
         opacity: 0
     }
 
     const inView = {
-        // x: 0,
+        x: 0,
         opacity: 1
 
     }
 
     const transition = {
+        delay: 0.4,
+        duration: 1.4,
+        type: "spring",
+        stiffness: 40
+    }
+
+    const transition2 = {
         delay: 0.6,
         duration: 1.4,
         type: "spring",
@@ -36,15 +43,15 @@ const Paywall = () => {
             </PaywallNav>
             <TopSection>
                 <TopSectionLeft  as={motion.section} initial={initial} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></TopSectionLeft>
-                <TopSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition}  viewport={{once: false, amount: 0.45}}></TopSectionRight>
+                <TopSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition2}  viewport={{once: false, amount: 0.45}}></TopSectionRight>
             </TopSection>
             <MidSection >
                 <MidSectionLeft as={motion.section} initial={initial} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></MidSectionLeft>
-                <MidSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></MidSectionRight>
+                <MidSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition2} viewport={{once: false, amount: 0.45}}></MidSectionRight>
             </MidSection>
             <BottomSection>
                 <BottomSectionLeft as={motion.section} initial={initial} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}}></BottomSectionLeft>
-                <BottomSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition} viewport={{once: false, amount: 0.45}} ></BottomSectionRight>
+                <BottomSectionRight as={motion.section} initial={initial2} whileInView={inView} transition={transition2} viewport={{once: false, amount: 0.45}} ></BottomSectionRight>
             </BottomSection>
         </PaywallView>
     )
@@ -153,8 +160,8 @@ const TopSectionLeft = styled.div`
   height: 70vh;
   border-radius: 15px;
   margin-right: 5vw;
+  margin-top: 80px;
   @media  (max-width: 1024px) {
-
     margin: 0;
     width: 70vw;
     height: 40vh;
@@ -166,6 +173,7 @@ const TopSectionRight = styled.section`
   height: 70vh;
   border-radius: 15px;
   margin-left: 5vw;
+  margin-bottom: 80px;
   @media  (max-width: 1024px) {
 
     margin: 0;
@@ -179,6 +187,8 @@ const MidSectionLeft = styled.section`
   height: 40vh;
   border-radius: 15px;
   margin-right: 5vw;
+  margin-top: 80px;
+
   @media  (max-width: 1024px) {
 
     margin: 0;
@@ -193,6 +203,8 @@ const MidSectionRight = styled.section`
   height: 40vh;
   border-radius: 15px;
   margin-left: 5vw;
+  margin-bottom: 80px;
+
   @media  (max-width: 1024px) {
 
     margin: 0;
@@ -207,6 +219,8 @@ const BottomSectionLeft = styled.section`
   height: 40vh;
   border-radius: 15px;
   margin-right: 5vw;
+  margin-top: 80px;
+
   @media  (max-width: 1024px) {
 
     margin: 0;
@@ -221,6 +235,8 @@ const BottomSectionRight = styled.section`
   height: 40vh;
   border-radius: 15px;
   margin-left: 5vw;
+  margin-bottom: 180px;
+
   @media  (max-width: 1024px) {
     margin: 0;
     width: 70vw;
