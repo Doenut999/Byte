@@ -25,7 +25,7 @@ const Button = styled.button`
   z-index: 13;
   cursor: pointer;
   border-radius: 4px;
-  top: 10px;
+  top: 30px;
   left: 20px;
 `
 
