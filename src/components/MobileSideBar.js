@@ -34,20 +34,19 @@ const MobileSideBar = () => {
     }
     const transitionLink = {
         type: "spring",
-        delay: 0.2,
-        duration: 2500,
-        stiffness: 100
+        duration: 400,
+        stiffness: 100,
     }
     return (
         <>
                 <StyledBar key="sidebar" as={motion.aside} initial={initialStyles} animate={animatedStyles}
                            transition={transition} exit={ {width: 0, transition: transition2} }>
                     <div className="spacing" style={{height: "10%"}}></div>
-                    <Slink onClick={()=> {}} as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.3}} exit={{fontSize: 0, }} to="order-history">Order History</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0}} to="promotions">Promotions</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0}} to="special-order">Special Order</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.6}} exit={{fontSize: 0}} to="favorites">Favorites</Slink>
-                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.7}} exit={{fontSize: 0}} to="/">Log Out</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.3}} exit={{fontSize: 0, duration: 0.4, opacity: 0}} to="order-history">Order History</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0, duration: 0.4, opacity: 0}} to="promotions">Promotions</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.5}} exit={{fontSize: 0, duration: 0.4, opacity: 0}} to="special-order">Special Order</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.6}} exit={{fontSize: 0, duration: 0.4, opacity: 0}} to="favorites">Favorites</Slink>
+                    <Slink as={motion(Link)} initial={initialLink} animate={animateLink} transition={{...transitionLink, delay: 0.7}} exit={{fontSize: 0, duration: 0.4, opacity: 0}} to="/">Log Out</Slink>
                 </StyledBar>
         </>)
 }

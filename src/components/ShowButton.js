@@ -1,5 +1,5 @@
+import HamburgerMenu from "./HamburgerMenu";
 import styled from "styled-components";
-
 const ShowButton = ({setShow}) => {
 
     const toggleSideBar = () => {
@@ -10,22 +10,22 @@ const ShowButton = ({setShow}) => {
 
     return (
         <>
-            <Button onClick={toggleSideBar}>Show SideBar</Button>
+            {/*<HamburgerMenu onClick={()=>{console.log("Hamburger clicked")}} />*/}
+            <Button onClick={toggleSideBar}><HamburgerMenu /></Button>
         </>
     )
 }
 
 const Button = styled.button`
-  background-color: darkblue;
-  color: white;
+  background-color: transparent;
+  color: transparent;
   border: none;
   padding: 8px;
   position: relative;
-  z-index: 3;
+  z-index: 13;
   cursor: pointer;
-  box-shadow: 1px 1px 1px coral;
   border-radius: 4px;
-  top: 30px;
+  top: 10px;
   left: 20px;
 `
 

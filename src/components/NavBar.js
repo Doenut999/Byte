@@ -27,7 +27,6 @@ const NavBar = () => {
     return (
         <>
             <NavStyles>
-
                 <SLink to="welcome" as={motion(Link)} initial={initialLink} animate={animateLink} transition={transitionLink} exit={{fontSize: 0, transition: transition2}}>
                     <Logo>Byte</Logo>
                 </SLink>
