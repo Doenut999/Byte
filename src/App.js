@@ -1,6 +1,6 @@
 import Paywall from "./components/Paywall/Paywall";
 import Home from "./pages/Home"
-import {Route, Routes, useLocation} from "react-router-dom";
+import {Route, Routes, } from "react-router-dom";
 import GlobalStyle from "./components/GlobalStyle";
 import NavBar from "./components/NavBar";
 import Favorites from "./pages/Favorites";
@@ -17,9 +17,7 @@ import React from "react";
 const App = () => {
     const [show, setShow] = useState(false)
     const [width, setWindowWidth] = useState(0);
-    const myLocation = useLocation()
-    let isPayWall = myLocation.pathname === "/pw"
-    console.log(isPayWall)
+
 
 
     const responsive = {
@@ -37,7 +35,6 @@ const App = () => {
 
     return (
         <>
-            {isPayWall ? <Paywall /> :
             <>
                 <GlobalStyle/>
             {responsive.showTopNavMenu ?
@@ -53,7 +50,6 @@ const App = () => {
                 </>
             }
                 </>
-            }
 
             <Routes>
                 <Route path="pw" element={<Paywall/>}/>
