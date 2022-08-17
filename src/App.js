@@ -19,6 +19,7 @@ const App = () => {
     const [width, setWindowWidth] = useState(0);
     const myLocation = useLocation()
     let isPayWall = myLocation.pathname === "/pw"
+    console.log(isPayWall)
 
 
     const responsive = {
