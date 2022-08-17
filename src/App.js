@@ -1,6 +1,6 @@
 import Paywall from "./components/Paywall/Paywall";
 import Home from "./pages/Home"
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import GlobalStyle from "./components/GlobalStyle";
 import NavBar from "./components/NavBar";
 import Favorites from "./pages/Favorites";
@@ -12,11 +12,14 @@ import {useEffect, useState} from "react";
 import ShowButton from "./components/ShowButton";
 import MobileSideBar from "./components/MobileSideBar";
 import {AnimatePresence} from "framer-motion";
-import React, {Fragment} from "react";
+import React from "react";
 
 const App = () => {
     const [show, setShow] = useState(false)
     const [width, setWindowWidth] = useState(0);
+    const myLocation = useLocation()
+    let isPayWall = myLocation.pathname === "/pw"
+
 
     const responsive = {
         showTopNavMenu: width > 1023
@@ -33,20 +36,24 @@ const App = () => {
 
     return (
         <>
-
-            <GlobalStyle/>
+            {isPayWall ? <Paywall /> :
+            <>
+                <GlobalStyle/>
             {responsive.showTopNavMenu ?
                 <>
-                    <NavBar/>
-                    <Sidebar/>
+                <NavBar/>
+                <Sidebar/>
                 </> :
                 <>
-                    <ShowButton show={show} setShow={setShow}/>
-                    <AnimatePresence>
-                        {show && <MobileSideBar key="indigo"/>}
-                    </AnimatePresence>
+                <ShowButton show={show} setShow={setShow}/>
+                <AnimatePresence>
+            {show && <MobileSideBar key="indigo"/>}
+                </AnimatePresence>
                 </>
             }
+                </>
+            }
+
             <Routes>
                 <Route path="pw" element={<Paywall/>}/>
                 <Route path="*" element={<>where do you think you are going</>}/>
